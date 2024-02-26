@@ -44,19 +44,19 @@
       title:'managerCareer',
       pageCount: 410,
       genre: 'autobiography',
-      authors:['LeeIacocca']
+      authors:[{name:'LeeIacocca',age:95}]
   }
   let book5 = {
       title:'sapiens',
       pageCount: 520,
       genre: 'nonFiction',
-      authors:['UvalNoahHarari']
+      authors:[{name:'UvalNoahHarari',age:48}]
   }
   let book6 = {
       title:'inferno',
       pageCount: 450,
       genre: 'novel',
-      authors:['DenBraun']
+      authors:[{name:'DenBraun',age:59}]
   }
   console.log(book4.authors[0]);
   console.log(book5.authors[0]);
@@ -201,6 +201,7 @@ console.log(users[9].password)
       case 7:
           console.log('sunday');
           break;
+      default: console.log('unknown day')
   }
   //   - Користувач вводить або має два числа.
   //           Потрібно знайти та вивести максимальне число з тих двох .
