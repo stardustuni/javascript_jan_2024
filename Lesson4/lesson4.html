@@ -17,6 +17,12 @@
     }
     let b = rectangle(7,9)
     console.log(b)
+
+    const triangle =(lenght,width)=>lenght*width;
+    let e = triangle(5,9)
+    console.log(e)
+
+
     // - створити функцію яка обчислює та повертає площу кола з радіусом r
     function circle(radius){
         const  PI = 3.14
@@ -24,6 +30,11 @@
     }
     let a = circle(20)
     console.log(a)
+
+    const round = (radius)=>PI*radius**2
+    const PI = 3.14
+    let y= round(40)
+    console.log(y)
     // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
     function cylinder(radius,high){
         const PI = 3.14
@@ -31,6 +42,9 @@
     }
     let c = cylinder(8,12)
     console.log(c)
+    const cylindr = (radius,high)=>2*PI*radius*high
+    let q = cylindr(3,7)
+    console.log(q)
     // - створити функцію яка приймає масив та виводить кожен його елемент
     function info (name,age,status){
         document.write(
@@ -84,13 +98,63 @@
     }
     threeUl(' druga lishka',3);
     // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-    // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-    // - створити функцію яка повертає найменьше число з масиву
-    // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-    // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
-    // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-    // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-    // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+    let element = ['string',45,true,12,false,'text'];
+
+    function someFun () {
+        document.write(`<ul>`)
+        for (let i = 0; i < element.length; i++) ;
+        {
+            document.write(`<li>${element}</li>`)
+        }
+        document.write(`</ul>`)
+    }
+    someFun()
+
+    //  - створити функцію яка повертає найменьше число з масиву
+    //  - створити функцію яка приймає масив
+    // об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+    let mass = [
+        {name:'vika'},
+        {age:30},
+        {id:1}
+    ]
+    function show(array){
+            for (let i = 0;i<mass.length;i++); {
+            document.write(`${mass.name}`)
+        }
+    }
+    show()
+
+    //  - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад
+    // sum([1,2,10]) ->13
+   let arr = [1,2,10]
+    function numbers (){
+            let num = 0
+            for (let i = 0;i<arr.length; i++){
+            num  = num + arr[i];
+        }
+            return num;
+    }
+    console.log(numbers())
+
+    let m = {
+           "massive":[1,2,10],
+           "sum": function (){
+            let sum = 0;
+            for (let i = 0;i<this.massive.length;i++){
+              sum = sum + this.massive[i];
+            }
+            return sum;
+        }
+    }
+    console.log(m.sum());
+
+    //  - створити функцію swap(arr,index1,index2). Функція міняє місцями знячення у відповідних індексах
+    //  Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+
+    //  Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+    // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') => 250
 </script>
 </body>
 </html>
