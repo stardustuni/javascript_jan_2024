@@ -174,10 +174,9 @@
         changeYear = function (newValue) {
             this.year = newValue;
         };
-        // addDriver = function (driver) {
-        //     driver = driver;
-        // }
-        //  addDriver({name: 'Petya', status:'Audi lover'});
+        addDriver = function (driver) {
+            this.driver = driver;
+        }
 
     }
 
@@ -185,18 +184,15 @@
     console.log(myAuto);
     myAuto.info()
     myAuto.drive()
-    console.log(myAuto.driver)
 
     myAuto.increaseMaxSpeed(10);
     console.log(myAuto.maxSpeed);
 
     myAuto.changeYear(2019);
     console.log(myAuto.year);
-    //
-    // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
-    // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
-    //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-    //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+     myAuto.addDriver({name: 'Petya', status:'Audi lover'});
+    console.log(myAuto.driver)
+
     class Cinderellas {
         constructor(name, age, shoeSize) {
             this.name = name;
