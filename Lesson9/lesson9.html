@@ -16,13 +16,12 @@
         margin: 10px;
     }
     .item{
-        height: 500px;
+        height: 550px;
         background-color: yellow;
         color: black;
     }
     .member{
         height: 100vh;
-        background-color: lightpink;
         color: maroon;
     }
 </style>
@@ -75,8 +74,8 @@
     document.body.append(coursesDiv);
     for (const course of coursesAndDurationArray){
         let h2 = document.createElement('h2');
-        h2.innerText = `${course.title}` `${course.monthDuration}`;
-        coursesDiv.body.appendChild(h2);
+        h2.innerText = `${course.title} ${course.monthDuration}`;
+        coursesDiv.appendChild(h2);
     }
 
     //
@@ -163,7 +162,7 @@
         let PaSi = document.createElement('p');
         h1Si.innerText = `${simps.name}`;
         h2Si.innerText = `${simps.surname}`;
-        h3Si.innerText = `${simps.age}`;
+        h3Si.innerText = `Bik -${simps.age}`;
         PaSi.innerText = `${simps.info}`;
         document.body.append(divSi);
         divSi.append(h1Si, h2Si, h3Si, PaSi);
