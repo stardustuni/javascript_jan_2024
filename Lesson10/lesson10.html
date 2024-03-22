@@ -30,7 +30,7 @@
 <div></div>
 <h2 id="age"></h2>
 <h3 id="text"></h3>
-<button>push</button>
+<button id="send">push</button>
 
 <script>
     // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
@@ -85,9 +85,10 @@
     //
     // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
 
-    let target = document.getElementById('text')
-    target.onblur = function (){
-
+    let target = document.getElementById('send')
+    let Divf = document.getElementById('text')
+    target.onclick= function (){
+        onblur(Divf)
     }
     //
     //
