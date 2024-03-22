@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson10</title>
+    <style>
+
+        #text{
+            height: 200px;
+            width: 200px;
+            background-color: maroon;
+        }
+    </style>
+</head>
+<body>
+<form action="lesson10.html" name="userInfo">
+    <input type="text" name="name">
+    <input type="text" name="surname">
+    <input type="text" name="age">
+    <button>Send</button>
+</form>
+<div id="block"> <p>1</p></div>
+<form action="lesson10.html" name="form2">
+    <input type="text" age="age">
+    <button>Confirm</button>
+</form>
+<div></div>
+<h2 id="age"></h2>
+<h3 id="text"></h3>
+<button>push</button>
+
+<script>
+    // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+    let userForm = document.forms.userInfo
+
+    console.log(userForm)
+    console.log(userForm.name)
+    console.log(userForm.surname)
+    console.log(userForm.age)
+
+    let userName = userForm.name
+    userName.value = 'Vasia'
+
+    let userSurname = userForm.surname
+    userSurname.value = 'Ivanov'
+
+    let userAge = userForm.age
+    userAge.value = '35'
+
+    let user = [];
+    userForm.onsubmit = function () {
+        let obj = {
+            name: this.name.value,
+            surname: this.surname.value,
+            age: this.age.value
+        }
+        user.push(obj)
+        console.log(user)
+    };
+    //
+    // ==========================
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+    let a = 0
+    let divNum = document.createElement('div')
+    document.body.appendChild(divNum)
+    let h3 = document.createElement('h3')
+    h3.innerText = a.value
+    divNum.onsubmit = function () {
+        h3.innerText = a.value + 1
+    }
+    console.log(h3)
+
+    // ==========================
+    // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+    // =========================
+    //     зробити масив на 100 об'єктів та дві кнопки prev next
+    // при завантажені сторінки з'являються перші 10 об'єктів.
+    //     При натисканні next виводяться настпні 10 об'єктів
+    // При натисканні prev виводяться попередні 10 об'єктів
+    //
+    //
+    //
+    //
+    // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+    let target = document.getElementById('text')
+    target.onblur = function (){
+
+    }
+    //
+    //
+    //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+        let form2 = document.forms.form2
+        console. log(form2)
+    let div = document.getElementsByTagName('div')
+    form2.oninput = function(){
+        if (this.value < 18) {
+            let h2 = document.getElementById('age')
+            h2.innerText = 'You are under 18!'
+        } else {
+            let h2 = document.getElementById('age')
+            h2.innerText = 'Welcome!'
+        }
+        div.appendChild(h2);
+    };
+    //
+    //
+    // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+    //
+    // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+    // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+    //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+    //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+
+</script>
+</body>
+</html>
