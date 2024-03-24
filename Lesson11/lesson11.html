@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson11</title>
+</head>
+<body>
+<script>
+    // - взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
+    fetch('https://dummyjson.com/docs/carts')
+        .then(res => res.json())
+        .then(value => { let {carts} = value;
+         console.log(carts);
+         for (const cart of carts){
+             document.write(`<h5>${cart.}.${cart.} ${cart.}</h5>`)
+         }
+    });
+
+    //
+    //     - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
+    fetch('https://dummyjson.com/docs/recipes')
+        .then(res => res.json()
+        .then(value => {
+            let {recipes} = value;
+            console.log(recipes);
+            document.write(`<ul>`)
+            for (const recipe of recipes){
+                document.write(`<li>${recipe.} ${recipe.} ${recipe.}</li>`)
+            }
+            document.write(`</ul>`)
+        });
+    //
+    //
+</script>
+
+</body>
+</html>
